@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7f8">
+    <title>SIMRS PKU Delanggu</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="SIMRS PKU Delanggu">
+          <span class="brand-mark"><img src="assets/logo-delanggu.png" alt="Logo RSU PKU Kota Delanggu"></span>
+          <span class="brand-copy">
+            <strong>PKU DELANGGU</strong>
+            <small>Hospital information system</small>
+          </span>
+        </a>
+
+        <div class="sidebar-label">MENU UTAMA</div>
+        <nav class="main-nav" aria-label="Menu utama">
+          <button class="nav-item active" data-module="dashboard">
+            <span class="nav-icon" data-icon="grid"></span><span>Dashboard</span>
+          </button>
+          <button class="nav-item" data-module="pasien">
+            <span class="nav-icon" data-icon="users"></span><span>Data pasien</span>
+          </button>
+          <button class="nav-item" data-module="rme">
+            <span class="nav-icon" data-icon="clipboard"></span><span>Rekam medis (SOAP)</span>
+          </button>
+          <button class="nav-item" data-module="rawat-jalan">
+            <span class="nav-icon" data-icon="calendar"></span><span>Rawat jalan</span>
+          </button>
+          <button class="nav-item" data-module="rawat-inap">
+            <span class="nav-icon" data-icon="bed"></span><span>Rawat inap</span>
+          </button>
+          <button class="nav-item" data-module="farmasi">
+            <span class="nav-icon" data-icon="pill"></span><span>Farmasi</span>
+          </button>
+          <button class="nav-item" data-module="keuangan">
+            <span class="nav-icon" data-icon="wallet"></span><span>Keuangan</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-label menu-label">LAYANAN</div>
+        <nav class="main-nav" aria-label="Layanan">
+          <button class="nav-item" data-module="komunikasi">
+            <span class="nav-icon" data-icon="message"></span><span>Komunikasi</span>
+          </button>
+          <button class="nav-item" data-module="laboratorium">
+            <span class="nav-icon" data-icon="flask"></span><span>Laboratorium</span>
+          </button>
+          <button class="nav-item" data-module="radiologi">
+            <span class="nav-icon" data-icon="scan"></span><span>Radiologi</span>
+          </button>
+          <button class="nav-item" data-module="laporan">
+            <span class="nav-icon" data-icon="report"></span><span>Laporan & RL</span>
+          </button>
+          <button class="nav-item" data-module="integrasi">
+            <span class="nav-icon" data-icon="network"></span><span>Integrasi & keamanan</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <div class="help-card">
+            <span class="help-icon" data-icon="help"></span>
+            <strong>Butuh bantuan?</strong>
+            <span>Demo lokal untuk uji alur kerja</span>
+            <span class="help-contact">Hubungi administrator sistem</span>
+          </div>
+          <div class="profile-button">
+            <span class="avatar avatar-doctor">AR</span>
+            <span class="profile-copy"><strong>Pengguna demo</strong><small>Tanpa autentikasi</small></span>
+            <span class="profile-more" aria-hidden="true">•••</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" aria-label="Buka menu"><span data-icon="menu"></span></button>
+          <div class="breadcrumb"><span>RSU PKU Kota Delanggu</span><span class="crumb-separator">/</span><strong id="breadcrumb-current">Dashboard</strong></div>
+          <div class="top-actions">
+            <label class="search-box">
+              <span data-icon="search"></span>
+              <input id="global-search" type="search" placeholder="Cari pasien, poli..." autocomplete="off" aria-label="Cari pasien atau poli">
+              <kbd>⌘ K</kbd>
+              <div class="search-results" id="search-results" hidden></div>
+            </label>
+            <span class="top-divider"></span>
+            <button class="icon-button notification-button" data-action="notifications" aria-label="Ringkasan aktivitas">
+              <span data-icon="bell"></span><i></i>
+            </button>
+            <span class="today-date" id="today-date"></span>
+          </div>
+        </header>
+
+        <div class="page-content" id="page-content"></div>
+        <footer class="page-footer">
+          <span id="footer-copyright"></span>
+          <span><i class="status-dot"></i> Demo lokal · jangan gunakan data pasien nyata</span>
+        </footer>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="patient-modal" hidden>
+      <section class="modal-card" id="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
